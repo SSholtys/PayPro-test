@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <title>PayPro Global</title>
+</head>
+
+<body>
+    <!-- HEADER SECTION START -->
+    <header class="header">
+        <div class="header-content">
+            <div class="header-logo">
+                <img src="./assets/logo.png" alt="Logo" class="header-logo-img">
+            </div>
+            <div class="header-progress">
+                <div class="header-indicators">
+                    <div class="header-indicator ind1 active-indicator" id="ind1" name="ind1">
+                        <p>1</p>
+                    </div>
+                    <span class="indicator_line" id="ind-line"></span>
+                    <div class="header-indicator ind2 disabled-indicator" id="ind2">
+                        2
+                    </div>
+                </div>
+            </div>
+            <div class="header-selectors">
+                <select class="form-select form-select-sm curency-select" aria-label=".form-select-sm example">
+                    <option selected>UAH</option>
+                    <option value="1">USD</option>
+                    <option value="2">PLN</option>
+                </select>
+                <select class="form-select form-select-sm lang-select" aria-label=".form-select-sm example">
+                    <option selected class="flag">Українська</option>
+                    <option value="1">English</option>
+                    <option value="2">Polish</option>
+                </select>
+
+            </div>
+        </div>
+    </header>
+    <!-- HEADER SECTION END -->
+    <!-- MAIN SECTION START -->
+    <main class="wrapper ">
+        <div class="main-block">
+            <div class="main-block-content">
+                <div class="card-section">
+                    <div class="payment-card">
+                        <div class="card-title">Платіжна Інформація <i class="info-icon"></i></div>
+                        <div class="chkbox-wrapper">
+                            <input type="checkbox" name="" id="corp-buy" class="chkbox" value="checked"> <label for="corp-buy" style="font-size: 12px; cursor: pointer;">Корпоративна купівля</label>
+                        </div>
+                        <div class="invis" id="hiddenBlock">
+                            <input type="text" value="" class="form-control inp" placeholder="Company name*" id="company-name" data-bs-toggle="tooltip" data-bs-placement="right">
+                        </div>
+                        <input type="email" class="form-control inp " id="email" placeholder="name@example.com*" data-bs-toggle="tooltip" data-bs-placement="right">
+                        <div class="inp-section">
+                            <input type="text" class="form-control inp" id="first-name" placeholder="First name*" style="margin-right: 14px;" data-bs-toggle="tooltip" data-bs-placement="right">
+                            <input type="text" class="form-control inp" id="last-name" placeholder="Last name*" data-bs-toggle="tooltip" data-bs-placement="right">
+                        </div>
+                        <input type="text" class="form-control inp" id="adress" placeholder="Enter Your adress*" data-bs-toggle="tooltip" data-bs-placement="right">
+                        <div class="inp-section">
+                            <input type="text" class="form-control inp" id="city" placeholder="City" style="margin-right: 14px;" data-bs-toggle="tooltip" data-bs-placement="right">
+                            <input type="text" class="form-control inp" id="postal-code" placeholder="Postal code" data-bs-toggle="tooltip" data-bs-placement="right">
+                        </div>
+                        <select class="form-select form-select-sm inp" aria-label=".form-select-sm example">
+                      <option selected>Україна</option>
+                      <option value="1">USA</option>
+                      <option value="2">Poland</option>
+                    </select>
+                        <input type="text" class="form-control inp phone" id="phone" placeholder="Phone number*" src="../assets/icons/question-circle.svg" data-bs-toggle="tooltip" data-bs-placement="right" title="Ваш телефонний
+                        номер (стаціонарний або мобільний) може знадобитися на випадок необхідності підтвердити Вашу адресу, або зв’язатися з Вами у разі виникнення питань підчас обробки Вашого замовлення.">
+                        <div class="chkbox-wrapper">
+                            <input type="checkbox" name="" id="other-pers-checkbox" class="chkbox"> <label for="other-pers-checkbox" style="font-size: 12px; cursor: pointer;">Ліцензія для іншої особи.</label>
+                        </div>
+                        <div id="other-pers-wrapper" class="invis">
+                            <div class="inp-section " id="other-pers-license">
+                                <input type="text" class="form-control inp" id="other-first-name" placeholder="Name*" style="margin-right: 14px;" data-bs-toggle="tooltip" data-bs-placement="right">
+                                <input type="text" class="form-control inp" id="other-last-name" placeholder="Email*" data-bs-toggle="tooltip" data-bs-placement="right">
+                            </div>
+                        </div>
+                        <span class="grayline"></span>
+                        <select class="form-select form-select-sm inp" aria-label=".form-select-sm example" id="payment-select">
+                            <option selected value="card">Кредитна / Дебетова Карта</option>
+                            <option value="paypal">PayPal</option>
+                            <option value="money-transfer">Грошовий переказ</option>
+                            <option value="buy-order">Замовлення на закупівлю</option>
+                        </select>
+                        <!-- CREDIT CARD SECTION -->
+                        <div id="credit-card-section">
+                            <input type="text" class="form-control inp card-number" id="card-number" placeholder="MasterCard/Visa number*" data-bs-toggle="tooltip" data-bs-placement="right">
+                            <div class="expiration-period">
+                                <select class="form-select form-select-sm card-month" aria-label=".form-select-sm example">
+                                  <option value="1" selected>01</option>
+                                  <option value="2">02</option>
+                                  <option value="3">03</option>
+                                  <option value="4">04</option>
+                                  <option value="5">05</option>
+                                  <option value="6">06</option>
+                                  <option value="7">07</option>
+                                  <option value="8">08</option>
+                                  <option value="9">09</option>
+                                  <option value="10">10</option>
+                                  <option value="11">11</option>
+                                  <option value="12">12</option>
+                                </select>
+                                <select class="form-select form-select-sm card-year" aria-label=".form-select-sm example">
+                                  <option value="21" selected>21</option>
+                                  <option value="22">22</option>
+                                  <option value="23">23</option>
+                                  <option value="24">24</option>
+                                  <option value="25">25</option>
+                                  <option value="26">26</option>
+                                  <option value="27">27</option>
+                                  <option value="28">28</option>
+                                </select>
+                                <input type="text" class="form-control inp cvv" id="cvv" placeholder="CVV code*" data-bs-toggle="tooltip" data-bs-placement="right">
+                            </div>
+                        </div>
+                        <!-- PAYPAL SECTION -->
+                        <div id="paypal-section" class="invis">
+                            <input type="email" class="form-control inp " id="paypal-email" placeholder="Email адреса PayPal ">
+                            <p class="payment-content" data-bs-toggle="tooltip" data-bs-placement="right">* Натиснувши на кнопку "Розмістити Замовлення", Вас буде направлено на захищену сторінку PayPal для завершення покупки. Рекомендовано використовувати Ваш перевірений PayPal Email. В іншому випадку можливі затримки під час обробки
+                                замовлення.
+                            </p>
+                        </div>
+                        <!-- MONEY TRANSFER -->
+                        <div id="money-transfer-section" class="invis">
+                            <p class="payment-content">* Натиснувши на кнопку "Розмістити Замовлення", Ви перейдете на сторінку з інструкціями про оплату грошовим переказом. Грошовий переказ передбачає додаткову оплату ручної обробки в розмірі 8.15 GBP , яка буде додана до загальної
+                                суми Вашого замовлення.
+                            </p>
+                        </div>
+                        <!-- BUY ORDER SECTION -->
+                        <div id="buy-order-section" class="invis">
+                            <p class="payment-content">* Натиснувши на кнопку "Розмістити Замовлення", Ви перейдете на сторінку з інструкціями про оплату грошовим переказом, кредитною картою або чеком. Замовлення на закупівлю передбачає додаткову оплату ручної обробки в розмірі
+                                8.15 GBP , яка буде додана до загальної суми Вашого замовлення.
+                            </p>
+                        </div>
+                        <div class="chkbox-wrapper">
+                            <input type="checkbox" name="" id="coupon-code-checkbox" class="chkbox"> <label for="coupon-code-checkbox" style="font-size: 12px; cursor: pointer;">Я маю код купона.</label>
+                        </div>
+                        <div id="coupon-wrapper" class="invis">
+                            <div class="input-group mb-3 coupon-code-inp invis">
+                                <input type="text" class="form-control" placeholder="Код купона" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                <button class="btn  btn-primary" type="button" id="button-addon2">Застосувати</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-section">
+                    <div class="info-card">
+                        <div class="card-title">Ви Купуєте</div>
+                        <div class="info-card-content">
+                            <div class="product-section">
+                                <img class="product-icon" src="./assets/icons/product-logo.png" alt="product image">
+                                <div class="product-title">Antony Test</div>
+                                <div class="product-price">2,735.65 UAH</div>
+                                <span class="grayline" style="position: absolute; top: 90%;"></span>
+                            </div>
+                            <div class="product-price-section">
+                                <div class="payment-info-block">
+                                    <div class="payment-info">ВСЬОГО:</div>
+                                    <div class="payment-info">2,735.65 UAH</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="error-message invis" id="error-message">Будь ласка, перевірте надану інформаці та заповніть всі обов'язкові поля !!!</div>
+        </div>
+        <div class="submit-section">
+            <button type="submit" class="submit-btn" value="Submit" id="submitBtn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Розмістити замовлення</button>
+        </div>
+        <div class="certificates">
+            <ul class="certifites-list">
+                <li class="certificates-item">
+                    <a href="">
+                        <img src="./assets/icons/new-pci.png" alt="">
+                    </a>
+                </li>
+                <li class="certificates-item">
+                    <a href="">
+                        <img src="./assets/icons/TrustedSite.svg" alt="">
+                    </a>
+                </li>
+                <li class="certificates-item">
+                    <a href="">
+                        <img src="./assets/icons/NortonSeal_PoweredbyDigiCert.png" alt="">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </main>
+    <!-- Modal -->
+    <div class="modal fade " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog ">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title mod-title" id="staticBackdropLabel">Modal title</h5>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- MAIN SECTION END -->
+    <!-- FOOTER SECTION START -->
+    <footer class="footer wrapper">
+        <div class="main-block">
+            <p class="footer-content">Розміщуючи замовлення, ви підтверджуєте, що купляєте продукт у PayPro Global (PayPro Global, Inc., PayPro Europe Limited или PayPro Global США Inc.), вповноваженого провайдера електронної коммерції. Одразу після завершення транзакції ваша
+                контактна інформація буде надана продавцеві товару в цілях подальшої підтримки.</p>
+            <p class="footer-content">Одразу після завершення транзакції ваша контактна інформація буде надана продавцеві товару в цілях подальшої підтримки.</p>
+            <p class="footer-content">Телефони цілодобової служби підтримки клієнтів:</p>
+            <div class="contacts-block">
+                <div class="contact-icon"><img src="./assets/icons/24h.png" alt="contact image"></div>
+                <div class="contact-telephones">
+                    <div class="phone-section">
+                        <div class="phone-number">+ 1-888-317-4868</div>
+                        <div class="phone-description">(дзвінок безкоштовний для США)</div>
+                    </div>
+                    <div class="phone-section">
+                        <div class="phone-number">+ 1-647-977-7769</div>
+                        <div class="phone-description">(міжнародний номер)</div>
+                    </div>
+                </div>
+            </div>
+            <p class="footer-content">Зверніться до нашого Центру Підтримки Клієнтів для отримання додаткової інформації про оплату та доставку. Якщо Вам потрібна допомога, будь ласка, вкажіть номер замовлення (ID), який знаходиться в електронному листі-підтвердженні.</p>
+
+            <div class="privacy-policy">
+                <ul class="policy-links">
+                    <li class="policy-link">
+                        <a href="">Політика&nbsp;Конфіденційності&nbsp;|</a>
+                    </li>
+                    <li class="policy-link">
+                        <a href="">&nbsp;Положення&nbsp;та&nbsp;Умови&nbsp;|</a>
+                    </li>
+                    <li class="policy-link">
+                        <a href="">&nbsp;Політика&nbsp;Повернення</a>
+                    </li>
+                </ul>
+                <div class="paypro-policy">&#169;PayPro Global, Inc. 2021</div>
+            </div>
+        </div>
+    </footer>
+    <!-- FOOTER SECTION END -->
+    <script async src="./js/main.js"></script>
+    <script async src="./js/validators.js"></script>
+</body>
+
+</html>
